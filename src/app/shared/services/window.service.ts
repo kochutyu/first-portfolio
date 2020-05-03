@@ -6,5 +6,7 @@ import { Injectable } from '@angular/core';
 export class WindowService {
   width: number;
   height: number;
+  scroll: number;
+  preloader: boolean;
   constructor() { }
 }

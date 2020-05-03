@@ -4,6 +4,7 @@ import { AdminService } from './shared/services/admin.service';
 import { FireService } from './shared/services/fire.service';
 import { ToastrService } from 'ngx-toastr';
 import { WindowService } from './shared/services/window.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +22,8 @@ export class AppComponent implements OnInit {
     public AdminService: AdminService,
     public FireService: FireService,
     public toast: ToastrService,
-    private windowS: WindowService
+    private windowS: WindowService,
+    private router: Router
   ) {
 
   }
@@ -37,11 +39,32 @@ export class AppComponent implements OnInit {
     });
     this.windowS.width = window.innerWidth
     this.windowS.height = window.innerHeight;
+    this.windowS.scroll = window.pageYOffset;
   }
 
   @HostListener('window:resize', ['$event']) onResize(event) {
     this.windowS.width = event.target.innerWidth
     this.windowS.height = event.target.innerHeight;
+    console.log('this.windowS.height: ', this.windowS.height);
+    
   }
+
+  // @HostListener('window:scroll', ['$event']) onScroll(event) {
+  //   this.windowS.scroll = window.pageYOffset;
+  //   console.log('this.windowS.height: ', this.windowS.scroll);
+  //   // this.windowS.preloader = false;
+  //   if (this.windowS.scroll < 400) {
+  //     this.windowS.preloader = false;
+  //     this.router.navigate(['/home']);
+  //   } else if (this.windowS.scroll >= 400 && this.windowS.scroll < 580) {
+  //     this.router.navigate(['/portfolio']);
+  //   } else if (this.windowS.scroll >= 580 && this.windowS.scroll < 1900) {
+  //     this.router.navigate(['/about']);
+  //   }
+  //   else if (this.windowS.scroll >= 2648) {
+  //     this.router.navigate(['/contact']);
+  //   } 
+  // }
+
 
 }

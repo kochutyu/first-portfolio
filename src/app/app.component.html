@@ -4,9 +4,6 @@
 
   <app-navbar class="app_navbar" #thisNavbar *ngIf="!AdminService.modal"></app-navbar>
   <main class="main lol" #ContentWidth *ngIf="!AdminService.modal">
-    <div ngxUiLoaderBlurred blur="200">
-      <router-outlet></router-outlet>
-    </div>
-    <ngx-ui-loader></ngx-ui-loader>
+    <router-outlet></router-outlet>
   </main>
 </div>
