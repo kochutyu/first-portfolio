@@ -17,10 +17,9 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   bounce: any;
   fadeInLeft: any;
-  @ViewChild('home', { static: false }) home: ElementRef;
   @ViewChild('portfolio', { static: false }) portfolio: ElementRef;
   @ViewChild('about', { static: false }) about: ElementRef;
-  @ViewChild('ontact', { static: false }) ontact: ElementRef;
+  @ViewChild('contact', { static: false }) contact: ElementRef;
   constructor(
     private windowS: WindowService,
     private router: Router
@@ -30,27 +29,32 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
-    const homeTop: number = this.portfolio.nativeElement.getBoundingClientRect().top;
+    this.getNavigate();
+
+  }
+
+  getNavigate(): void{
     const portfolioTop: number = this.portfolio.nativeElement.getBoundingClientRect().top;
     const aboutTop: number = this.about.nativeElement.getBoundingClientRect().top;
-    const contactTop: number = this.ontact.nativeElement.getBoundingClientRect().top;
+    const contactTop: number = this.contact.nativeElement.getBoundingClientRect().top;
     this.windowS.scroll = window.pageYOffset;
     console.log('portfolioTop: ', portfolioTop);
-    if (portfolioTop >= 300) { 
+    if (portfolioTop >= 300) {
       this.router.navigate(['/home']);
     }
-    if (portfolioTop<0) {
+    if (portfolioTop < 0) {
       this.router.navigate(['/portfolio']);
-    } 
+    }
 
     if (aboutTop < 0) {
       this.router.navigate(['/about']);
-    } 
+    }
+
+    console.log(contactTop);
 
     if (contactTop < 0) {
       this.router.navigate(['/contact']);
     }
-
   }
 
 }
