@@ -16,8 +16,6 @@ const routes: Routes = [
   { path: 'contact', component: HomeComponent },
   { path: '**', redirectTo: '/home' },
 ];
-// {path: 'admin', component: AdminComponent},
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

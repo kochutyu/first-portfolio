@@ -86,11 +86,10 @@
 }
 
 @media screen and (max-width: 535px) {
-  .text-header h1 {
+  .text-header h1{
     font-size: 27px;
   }
-
-  .text-header span {
+  .text-header span{
     font-size: 45px;
   }
 }
