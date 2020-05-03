@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
     if (aboutTop < 50) {
       this.router.navigate(['/about']);
     }
-    console.log(contactTop);
     
     if (contactTop < 50) {
       this.router.navigate(['/contact']);
