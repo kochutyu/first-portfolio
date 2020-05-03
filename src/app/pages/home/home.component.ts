@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
     const aboutTop: number = this.about.nativeElement.getBoundingClientRect().top;
     const contactTop: number = this.contact.nativeElement.getBoundingClientRect().top;
     this.windowS.scroll = window.pageYOffset;
-    console.log('portfolioTop: ', portfolioTop);
     if (portfolioTop >= 300) {
       this.router.navigate(['/home']);
     }
@@ -49,8 +48,6 @@ export class HomeComponent implements OnInit {
     if (aboutTop < 0) {
       this.router.navigate(['/about']);
     }
-
-    console.log(contactTop);
 
     if (contactTop < 0) {
       this.router.navigate(['/contact']);
