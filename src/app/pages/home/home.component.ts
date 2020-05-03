@@ -41,15 +41,16 @@ export class HomeComponent implements OnInit {
     if (portfolioTop >= 300) {
       this.router.navigate(['/home']);
     }
-    if (portfolioTop < 0) {
+    if (portfolioTop < 50) {
       this.router.navigate(['/portfolio']);
     }
 
-    if (aboutTop < 0) {
+    if (aboutTop < 50) {
       this.router.navigate(['/about']);
     }
-
-    if (contactTop < 0) {
+    console.log(contactTop);
+    
+    if (contactTop < 50) {
       this.router.navigate(['/contact']);
     }
   }

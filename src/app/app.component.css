@@ -12,6 +12,7 @@
   padding: 0;
   padding-left: 80px;
   box-sizing: border-box;
+  position: relative;
 }
 
 h1,
@@ -41,6 +42,8 @@ label {
 @media screen and (max-width: 1151px) {
   .main {
     padding-left: 0;
+    height: 100vh;
+    /* top: 65px; */
   }
 }
 .displayNavbar{
