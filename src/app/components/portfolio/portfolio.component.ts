@@ -35,6 +35,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   // GET_ELEMENTS
   @ViewChild('showMoreAnchor', { static: false }) showMoreAnchor: ElementRef; // btn SHOW MORE...
   @ViewChild('heightPortfolio', { static: false }) heightPortfolio: ElementRef; // height content
+  @ViewChild('onInitHeightPortfolio', { static: true }) onInitHeightPortfolio: ElementRef; // height content
 
   constructor(
     private cloud: CloudService,
@@ -48,7 +49,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
+    this.r.setStyle(this.onInitHeightPortfolio.nativeElement, 'minHeight', `205px`);
     this.getColumns();
     this.firstWorks();
   }
@@ -107,9 +108,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
           deleteID: user.payload.doc.id
         };
       });
-      this.AdminService.portfolioPaginator = this.columns
-
-
+      this.AdminService.portfolioPaginator = this.columns;
     });
   }
 

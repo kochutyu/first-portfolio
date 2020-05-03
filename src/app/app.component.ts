@@ -49,22 +49,5 @@ export class AppComponent implements OnInit {
     
   }
 
-  // @HostListener('window:scroll', ['$event']) onScroll(event) {
-  //   this.windowS.scroll = window.pageYOffset;
-  //   console.log('this.windowS.height: ', this.windowS.scroll);
-  //   // this.windowS.preloader = false;
-  //   if (this.windowS.scroll < 400) {
-  //     this.windowS.preloader = false;
-  //     this.router.navigate(['/home']);
-  //   } else if (this.windowS.scroll >= 400 && this.windowS.scroll < 580) {
-  //     this.router.navigate(['/portfolio']);
-  //   } else if (this.windowS.scroll >= 580 && this.windowS.scroll < 1900) {
-  //     this.router.navigate(['/about']);
-  //   }
-  //   else if (this.windowS.scroll >= 2648) {
-  //     this.router.navigate(['/contact']);
-  //   } 
-  // }
-
 
 }

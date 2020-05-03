@@ -18,23 +18,13 @@
 
     <button (click)="OnNewWork()" class="add_new-work btn-por" *ngIf="AdminService.signIn">Add new work</button >
   </div>
-  <!-- PORTFOLIO_FILTER -->
-  <!-- <div class="portfolio_filter_block">
-    <ul class="container-nav-filter-btn">
-      <li class="btn-por">All</li>
-      <li class="btn-por">Angular</li>
-      <li class="btn-por">React</li>
-      <li class="btn-por">Vue</li>
-      <li class="btn-por">JQuery</li>
-    </ul>
-  </div> -->
   
   <!-- PORTFOLIO_CONTENT -->
   <div class="portfolio_height mt-20" #portfolioImg>
 
     <!-- CONTENT -->
 
-    <div class="portfolio-contents-row" #heightPortfolio #dddd>
+    <div class="portfolio-contents-row" #heightPortfolio #onInitHeightPortfolio>
       <div class="portfolio-contents-column" *ngFor="let item of columns; let i = index" >
         <button class="edit_post_portfolio btn-por" *ngIf="AdminService.signIn" (click)="OnWorkEdit(item)">Edit</button>
         <button class="delete_post_portfolio btn-por" *ngIf="AdminService.signIn" (click)="OnDelete(item)">Delete</button>
