@@ -137,7 +137,7 @@ export class AboutService implements OnInit {
           id: user.payload.doc.id
         };
       });
-      console.log(this.aboutSkillsArr);
+      
     });
   }
 

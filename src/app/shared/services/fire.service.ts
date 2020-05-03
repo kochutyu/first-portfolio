@@ -83,7 +83,7 @@ export class FireService {
 
             // DELETE this work
             this.deleteDoc(this.AdminService.editObj[0], 'portfolio');
-            console.log(this.AdminService.editObj[0]);
+            
 
             // UPDATE your DATA by ID
             const work = new PortfolioWork(this.AdminService.thisWork.id, this.AdminService.viewDemo, this.AdminService.slider_img);

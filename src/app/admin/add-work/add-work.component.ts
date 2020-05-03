@@ -44,15 +44,15 @@ export class AddWorkComponent implements OnInit {
           this.downloadURL.subscribe(url => {
             this.AdminService.urlImg = url;
             const slide = new PortfolioImg(this.AdminService.urlImg, this.AdminService.describe, this.AdminService.header);
-            console.log(slide,this.AdminService.slider_img, this.AdminService.thisWorkImgs);
+            
             
             this.AdminService.slider_img.push(slide);
 
-            console.log(slide,this.AdminService.slider_img, this.AdminService.thisWorkImgs);
+            
 
             if(this.AdminService.addWorkStatus) this.AdminService.thisWorkImgs.push(slide);
 
-            console.log(slide,this.AdminService.slider_img, this.AdminService.thisWorkImgs);
+            
 
             this.AdminService.clearForm();
             this.AdminService.upload = false;
@@ -61,7 +61,7 @@ export class AddWorkComponent implements OnInit {
         })
       ).subscribe();
       // this.AdminService.addShowSlider();
-      console.log(this.AdminService.thisWorkImgs, 'this');
+      
     }
 
   }

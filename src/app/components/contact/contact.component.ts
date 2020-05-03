@@ -41,7 +41,7 @@ export class ContactComponent implements OnInit {
         text: this.form.value.text,
       }
     }).subscribe(res => {
-      console.log(res);
+      
       this.submited = false;
       this.form.reset();
     }, error => {

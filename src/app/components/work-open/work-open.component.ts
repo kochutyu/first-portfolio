@@ -19,6 +19,6 @@ export class WorkOpenComponent implements OnInit {
   }
 
   lol(): void{
-    // console.log(this.work);
+    
   }
 }

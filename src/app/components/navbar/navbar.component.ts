@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
   scrollTop: number = document.documentElement.scrollTop;
 
   ngOnInit() {
-    console.log(document.querySelector('.dropToggle'));
+    
     
     window.addEventListener('resize', () => { // get width browser
       this.deviceWidth = window.innerWidth;
@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit {
       }
     });
 
-    console.log(document.querySelector('.menuPhone'));
+    
 
 
     // document.addEventListener('scroll', () => { // show navbar for tab and mobile
@@ -81,7 +81,7 @@ export class NavbarComponent implements OnInit {
   }
 
   scrollToElement($element): void {
-    console.log($element);
+    
     $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 }

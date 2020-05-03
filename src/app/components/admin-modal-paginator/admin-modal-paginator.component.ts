@@ -27,11 +27,11 @@ export class AdminModalPaginatorComponent implements OnInit {
       this.paginator();
     } else if (paginatorCount > 0) {
       const index = paginatorIndex[0];
-      console.log(index + 1, 'index+1');
+      
 
       paginatorIndex.unshift(index + 1);
       paginatorCount += 1;
-      console.log(paginatorIndex);
+      
       this.paginator();
     }
 
@@ -50,11 +50,11 @@ export class AdminModalPaginatorComponent implements OnInit {
       this.paginator();
     } else if (paginatorCount > 0) {
       const index = paginatorIndex[0];
-      console.log(index - 1, 'index+1');
+      
 
       paginatorIndex.unshift(index - 1);
       paginatorCount += 1;
-      console.log(paginatorIndex);
+      
       this.paginator();
     }
   }
