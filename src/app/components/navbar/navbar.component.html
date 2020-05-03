@@ -1,0 +1,105 @@
+<!-- START  ----------------------------------
+
+    ==> NAVIGATION
+      ==> NAV_LOGO
+      ==> NAV_FOR_USER
+      ==> NAV_FOR_ADMIN
+
+---- END  ----------------------------------->
+
+<!-- NAVIGATION -->
+<nav class="nav" #thisNavbar>
+
+  <!-- NAV_LOGO -->
+  <div class="nav-logo">
+    <a pageScroll href="#home" [routerLink]="['/home']" routerLinkActive="active, active_icon">
+      <img src="../../../assets/images/logo.png" alt="">
+    </a>
+  </div>
+
+  <!-- NAV_FOR_USER DESCTOP -->
+  <ul class="navbar" *ngIf="deviceWidth>1151">
+    <li data-title="home">
+      <a pageScroll href="#home" [routerLink]="['/home']" routerLinkActive="active_icon">
+        <i class="fa fa-home"></i>
+      </a>
+    </li>
+    <li data-title="portfolio">
+      <a pageScroll href="#portfolio" [routerLink]="['/portfolio']" routerLinkActive="active_icon">
+        <i class="fa fa-briefcase"></i>
+      </a>
+    </li>
+    <li data-title="about">
+      <a pageScroll href="#about" [routerLink]="['/about']" routerLinkActive="active_icon">
+        <i class="fa fa-user"></i>
+      </a>
+    </li>
+    <li data-title="contact">
+      <a pageScroll href="#contact" [routerLink]="['/contact']" routerLinkActive="active_icon">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+    <li data-title="sign-out" *ngIf="AdminService.signIn">
+      <a [routerLink]="['/get-admin-settings/home']" (click)="AdminService.signIn = false">
+        <i class="fa fa-sign-out"></i>
+      </a>
+    </li>
+  </ul>
+
+  <!-- NAV_FOR_USER TAB -->
+  <ul class="navbar" *ngIf="deviceWidth<=1151 && deviceWidth>1080" #navbarUlHeight>
+    <a pageScroll href="#home" [routerLink]="['/home']" routerLinkActive="active_tab">
+      <li data-title="home">
+        home
+      </li>
+    </a>
+    <a pageScroll href="#portfolio" [routerLink]="['/portfolio']" routerLinkActive="active_tab">
+      <li data-title="portfolio">
+        portfolio
+      </li>
+    </a>
+    <a pageScroll href="#about" [routerLink]="['/about']" routerLinkActive="active_tab">
+      <li data-title="about">
+        about
+      </li>
+    </a>
+    <a pageScroll href="#contact" [routerLink]="['/contact']" routerLinkActive="active_tab">
+      <li data-title="contact">
+        contact
+      </li>
+    </a>
+    <a [routerLink]="['/get-admin-settings/home']" (click)="AdminService.signIn = false">
+      <li data-title="sign-out" *ngIf="AdminService.signIn">
+        <i class="fa fa-sign-out"></i>
+      </li>
+    </a>
+  </ul>
+
+  <!-- NAV_FOR_USER MOBILE -->
+  <div class="mobile_nav" role="navigation" *ngIf="deviceWidth<=1080">
+    <div id="menuToggle">
+      <input class="dropToggle" type="checkbox" #lol/>
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu" class="menuPhone">
+        <a (click)="downUp()" pageScroll href="#home" [routerLink]="['/home']" routerLinkActive="active_li">
+          <li>Home</li>
+        </a>
+        <a (click)="downUp()" pageScroll href="#portfolio" [routerLink]="['/portfolio']" routerLinkActive="active_li">
+          <li>Portfolio</li>
+        </a>
+        <a (click)="downUp()" pageScroll href="#about" [routerLink]="['/about']" routerLinkActive="active_li">
+          <li>About</li>
+        </a>
+        <a (click)="downUp()" pageScroll href=" #contact" [routerLink]="['/contact']" routerLinkActive="active_li">
+          <li>Contact</li>
+        </a>
+        <a (click)="downUp()" [routerLink]="['/home']" routerLinkActive="active" *ngIf="AdminService.signIn">
+          <li>Sign Out</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+</nav>

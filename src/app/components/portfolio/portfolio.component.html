@@ -1,0 +1,62 @@
+<!-- CONTENT START -------------------------------------------------
+
+  ==> PORTFOLIO_NAV 
+        PORTFOLIO_FILTER
+
+  ==> PORTFOLIO_CONTENT 
+        CONTENT
+
+  ==> PORTFOLIO_BTN_SHOW_MORE
+
+---- CONTENT END -------------------------------------------------->
+
+<div class="my_container">
+  <!-- PORTFOLIO_NAV -->
+  <div class="display_between">
+    <!-- TITLE_PORTFOLIO_NAV -->
+    <h3>From My Portfolio</h3>
+
+    <button (click)="OnNewWork()" class="add_new-work btn-por" *ngIf="AdminService.signIn">Add new work</button >
+  </div>
+  <!-- PORTFOLIO_FILTER -->
+  <!-- <div class="portfolio_filter_block">
+    <ul class="container-nav-filter-btn">
+      <li class="btn-por">All</li>
+      <li class="btn-por">Angular</li>
+      <li class="btn-por">React</li>
+      <li class="btn-por">Vue</li>
+      <li class="btn-por">JQuery</li>
+    </ul>
+  </div> -->
+  
+  <!-- PORTFOLIO_CONTENT -->
+  <div class="portfolio_height mt-20" #portfolioImg>
+
+    <!-- CONTENT -->
+
+    <div class="portfolio-contents-row" #heightPortfolio #dddd>
+      <div class="portfolio-contents-column" *ngFor="let item of columns; let i = index" >
+        <button class="edit_post_portfolio btn-por" *ngIf="AdminService.signIn" (click)="OnWorkEdit(item)">Edit</button>
+        <button class="delete_post_portfolio btn-por" *ngIf="AdminService.signIn" (click)="OnDelete(item)">Delete</button>
+        <a class="portfolio-content-img portfolio-content-hover" (click)="OnWorkOpen(item)" [routerLink]="[ '/home']">
+         <div class="portfolio-relative">
+            <div class="portfolio-title">
+              <h4>{{item.data}}</h4>
+            </div>
+            <div [ngClass]="{
+              'portfolio-opacity': !AdminService.signIn,
+              'hover-active': AdminService.signIn
+            }"></div>
+            <img [src]="item.slider[0].urlImg" alt="" #lol1>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PORTFOLIO_BTN_SHOW_MORE -->
+  <!-- <div class="btn-por btn-portfolio-center" (click)="showMore()" #showMoreAnchor>{{ShowMoreText}}</div> -->
+  <button class="btn-por btn-portfolio-center" (click)="OnShowMore()" #showMoreAnchor>{{ShowMoreText}}</button>
+</div>

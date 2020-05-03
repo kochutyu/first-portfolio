@@ -1,0 +1,123 @@
+<!-- CONTENT START -------------------------------------------------
+
+  ==> TITLE_CONTACT 
+      DESCRIBE_CONTACT
+
+  ==> MARGIN
+
+  ==> COMMUNICATION_WITH_ME
+        STREET
+        PHONE_NUMBER
+        EMAIL
+
+  ==> MARGIN
+
+  ==> CONTACT_FORM
+        GENERAL_INFORMATION
+          NAME
+          EMAIL
+          SUBJECT
+          BTN_SEND_MESSAGE
+        TEXTAREA_MESSAGE
+          BTN_CLEAR_MESSAGE
+
+---- CONTENT END -------------------------------------------------->
+
+<div class="my_container">
+
+  <!-- TITLE_CONTACT -->
+  <h3>Get in Touch with Me</h3>
+  <!-- DESCRIBE_CONTACT -->
+  <!-- <div class="mt-20">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, tenetur neque consequatur ad quia adipisci corporis
+      unde temporibus vero dolore quam nesciunt provident recusandae quo dolores culpa mollitia perferendis quos soluta
+      harum? Eius omnis placeat aliquid non hic molestias est repudiandae optio quisquam ducimus eum aperiam numquam
+      error, accusamus quo?</p>
+  </div> -->
+
+  <!-- MARGIN -->
+  <div class="devide50"></div>
+
+  <!-- COMMUNICATION_WITH_ME -->
+  <div class="contact-with-me-info">
+    <!-- STREET -->
+    <div class="road">
+      <i class="fa fa-map"></i>
+      <p>Ukraine, Lviv city</p>
+    </div>
+    <!-- PHONE_NUMBER -->
+    <div class="phone">
+      <i class="fa fa-phone"></i>
+      <p>+38 (099) 01 42 594</p>
+    </div>
+    <!-- EMAIL -->
+    <div class="email">
+      <i class="fa fa-envelope"></i>
+      <p>kochuyurawork@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- MARGIN -->
+  <div class="devide50"></div>
+
+  <!-- CONTACT_FORM -->
+  <form class="contact-form" [formGroup]="form" (ngSubmit)="sendMessage()" *ngIf="windowS.width>800">
+    <!-- GENERAL_INFORMATION -->
+    <div class="contact-form-input left">
+      <!-- NAME -->
+      <div class="contact-form-input-name mb-20">
+        <h6>Name</h6>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <!-- EMAIL -->
+      <div class="contact-form-input-name mb-20">
+        <h6>Email</h6>
+        <input type="text" class="form-control email-form" formControlName="email">
+      </div>
+      <!-- BTN_SEND_MESSAGE -->
+      <!-- <div class="btn-por contact-btn">Send message</div> -->
+      <!-- <input type="submit" value="Send message" class="btn-por contact-btn"> -->
+      <button class="btn-por contact-btn" type="submit">Send message</button>
+    </div>
+    <!-- TEXTAREA_MESSAGE -->
+    <div class="contact-form-input">
+      <h6>Message</h6>
+      <textarea cols="30" rows="8" class="form-control mb-20" [(ngModel)]="contact_textarea" name="textarea" formControlName="text"></textarea>
+      <!-- <input type="text" class="form-control " [(ngModel)]="contact_textarea"> -->
+
+      <!-- BTN_CLEAR_MESSAGE -->
+      <button type="button" class="btn-por contact-btn" (click)="clearForm()">Clear message</button>
+    </div>
+  </form>
+
+  <form class="contact-form" [formGroup]="form" (ngSubmit)="sendMessage()" *ngIf="windowS.width<=800">
+    <!-- GENERAL_INFORMATION -->
+    <div class="contact-form-input left">
+      <!-- NAME -->
+      <div class="contact-form-input-name mb-20">
+        <h6>Name</h6>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <!-- EMAIL -->
+      <div class="contact-form-input-name mb-20">
+        <h6>Email</h6>
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+    </div>
+    <!-- TEXTAREA_MESSAGE -->
+    <div class="contact-form-input">
+      <h6>Message</h6>
+      <textarea cols="30" rows="8" class="form-control mb-20" [(ngModel)]="contact_textarea" name="textarea"
+      formControlName="text"></textarea>
+      <!-- <input type="text" class="form-control " [(ngModel)]="contact_textarea"> -->
+      
+      <!-- BTN_CLEAR_MESSAGE -->
+      <div class="btn-form">
+        <button class="btn-por contact-btn" type="submit">Send message</button>
+        <button type="button" class="btn-por contact-btn" (click)="clearForm()">Clear message</button>
+      </div>
+    </div>
+  </form>
+
+  
+</div>

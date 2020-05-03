@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400i,700&display=swap');
+
+*::selection {
+  background: #fefac7;
+  color: #2f2f2f;
+}
+
+.main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-left: 80px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+span,
+label {
+  font-family: 'Raleway', sans-serif;
+  color: #e0e0e0;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1151px) {
+  .main {
+    padding-left: 0;
+  }
+}
+.displayNavbar{
+  position: relative;
+}
+.app_navbar{
+  position: absolute;
+}
+.my-modal-open{
+  position: absolute;
+  z-index: 100000;
+  background-color: #333;
+  width: 100%;
+  right: 0;
+  overflow: hidden;
+  animation: modal_open_animation 0.5s linear;
+}
+
+@keyframes modal_open_animation {
+  0% {
+    right: 100%;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+/* TAB */
+@media screen and (max-width: 1151px) {}
+
+/* MOBILE */
+@media screen and (max-width: 1151px) {}

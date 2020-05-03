@@ -1,0 +1,22 @@
+.close-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 105px;
+    background: #1a1a1b;
+    z-index: 99990;
+    padding-right: 25px;
+  }
+  
+  .btn-margin-right button {
+    margin-right: 2px;
+  }
+  
+  .close-modal-btn:last-child:hover {
+    border: 2px solid rgb(214, 115, 115);
+    color: rgb(214, 115, 115);
+  }

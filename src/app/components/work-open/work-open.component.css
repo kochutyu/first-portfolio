@@ -1,0 +1,16 @@
+.work-open-slider{
+    max-width: 900px;
+    margin: auto;
+}
+
+.work-open-view-btn{
+    display: flex;
+    justify-content: center;
+}
+.mb20{
+    margin-bottom: 20px;
+}
+
+.work-open-view-btn a:hover{
+    text-decoration: none;
+}

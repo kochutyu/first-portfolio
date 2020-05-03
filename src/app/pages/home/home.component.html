@@ -1,0 +1,45 @@
+<!-- CONTENT START -------------------------------------------------
+
+  ==> HOME 
+
+  ==> PORTFOLIO 
+
+  ==> ABOUT_ME
+
+  ==> CONTACT_WITH_ME
+
+  ==> FOOTER
+
+---- CONTENT END -------------------------------------------------->
+
+
+<!-- HOME -->
+<section id="home" class="home mb-100">
+  <div class="text-header">
+    <h1 class="no-select-user">Welcome to my portfolio!</h1>
+    <span class="KochutYura no-select-user">Kochut Yura</span>
+  </div>
+  <a pageScroll href="#portfolio" [routerLink]="['/home']" class="down-arrow">
+    <fa name="chevron-down"></fa>
+  </a>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section mb-100">
+  <app-portfolio></app-portfolio>
+</section>
+
+<!-- ABOUT_ME -->
+<section id="about" class="section mb-100">
+  <app-about></app-about>
+</section>
+
+<!-- CONTACT_WITH_ME -->
+<section id="contact" class="section mb-20">
+  <app-contact></app-contact>
+</section>
+
+<!-- FOOTER -->
+<section id="footer" class="section mb-20">
+  <app-footer></app-footer>
+</section>

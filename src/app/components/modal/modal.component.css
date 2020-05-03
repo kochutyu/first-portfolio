@@ -1,0 +1,15 @@
+.modal_window {
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.modal_content {
+  padding-top: 105px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}

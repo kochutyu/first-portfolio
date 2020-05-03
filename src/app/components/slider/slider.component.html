@@ -1,0 +1,11 @@
+<ngb-carousel *ngIf="this.AdminService.thisWorkImgs">
+  <ng-template ngbSlide *ngFor="let item of this.AdminService.thisWorkImgs; let i = index">
+    <div class="picsum-img-wrapper">
+      <img [src]="item.urlImg" alt="Random first slide">
+    </div>
+    <div class="carousel-caption" *ngIf="AdminService.modal_slider_info">
+      <h3>{{item.header}}</h3>
+      <p>{{item.describe}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

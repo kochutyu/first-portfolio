@@ -1,0 +1,11 @@
+<div class="modal_window">
+  <app-close-add-work-modal *ngIf="AdminService.newWork"></app-close-add-work-modal>
+  <app-close-add-work-modal *ngIf="AdminService.editAbout"></app-close-add-work-modal>
+  <app-close-add-work-modal *ngIf="AdminService.add_skill"></app-close-add-work-modal>
+  <div class="modal_content">
+    <app-add-work *ngIf="AdminService.newWork"></app-add-work>
+    <app-work-open *ngIf="AdminService.workOpen"></app-work-open>
+    <app-edit-about-me *ngIf="AdminService.editAbout"></app-edit-about-me>
+    <app-add-skill *ngIf="AdminService.add_skill"></app-add-skill>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="close-modal">
+    
+  <div class="btn-margin-right" *ngIf="AdminService.pPortfolio">
+    <button class="btn-por btn-margin-right" (click)="FireService.work()" *ngIf="!AdminService.editPortfolio">Add</button>
+    <button class="btn-por btn-margin-right" (click)="FireService.work()" *ngIf="AdminService.editPortfolio">Save</button>
+  </div>
+
+  <div class="btn-margin-right" *ngIf="AdminService.pAbout">
+
+    <div *ngIf="AboutService.ngIfAboutInfo">
+      <button class="btn-por btn-margin-right" (click)="AboutService.aboutInfo()" *ngIf="!AboutService.editAboutInfo">Add</button>
+      <button class="btn-por btn-margin-right" (click)="AboutService.aboutInfo()" *ngIf="AboutService.editAboutInfo">Save</button>
+    </div>
+
+    <div *ngIf="AboutService.ngIfSkill">
+      <button class="btn-por btn-margin-right" (click)="AboutService.aboutSkill()" *ngIf="!AboutService.editAboutSkill">Add</button>
+      <button class="btn-por btn-margin-right" (click)="AboutService.aboutSkill()" *ngIf="AboutService.editAboutSkill">Save</button>
+      </div>
+    
+  </div>
+
+  <button class="btn-por close-modal-btn" (click)="AdminService.close_modal()"><i class="fa fa-times"></i></button>
+</div>

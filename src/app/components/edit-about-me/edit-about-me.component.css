@@ -1,0 +1,89 @@
+.app_slider_and_post_photo {
+  display: flex;
+}
+
+.app_slider,
+.post_photo {
+  width: 50%;
+}
+
+.ngb_carusel_style {
+  height: 300px;
+}
+
+.ml_add_work_modal {
+  margin-left: 25px;
+}
+
+.mb_add_work_modal {
+  margin-bottom: 10px;
+}
+
+.post_photo textarea {
+  height: 148px;
+  resize: none;
+}
+
+::-webkit-input-placeholder {
+  color: #c3c3c3;
+}
+
+::-moz-placeholder {
+  color: #c3c3c3;
+}
+
+/* Firefox 19+ */
+:-moz-placeholder {
+  color: #c3c3c3;
+}
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+  color: #c3c3c3;
+}
+
+.edit_about_me {
+  display: flex;
+}
+
+.edit_about_me textarea:first-child {
+  width: 50%;
+}
+
+.edit_about_me textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.upload {
+  width: 100%;
+  margin: 0;
+}
+
+.upload-card {
+  padding: 0;
+}
+
+.btnUpload {
+  position: relative;
+  z-index: 6;
+}
+
+.formUpload{
+    position: relative;
+    z-index: 4;
+    top: -38px;
+}
+
+.progressUpload{
+    height: 37px;
+    opacity: 0;
+}
+.opacity0{
+    opacity: 0;
+}
+.opacity1{
+    opacity: 1;
+}
+
+

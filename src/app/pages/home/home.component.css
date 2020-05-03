@@ -1,0 +1,86 @@
+/* CONTENT START -------------------------------------------------
+
+  ==> HOME
+
+---- CONTENT END -------------------------------------------------- */
+
+/* HOME */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.down-arrow {
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  animation-name: down-arrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: color 0.5s;
+}
+
+.down-arrow:hover {
+  color: #9cbc68;
+}
+
+@keyframes down-arrow {
+  0% {
+    top: 85vh;
+  }
+
+  50% {
+    top: 90vh;
+  }
+
+  100% {
+    top: 85vh;
+  }
+}
+
+.text-header {
+  position: relative;
+  top: 20px;
+  left: 0;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  animation-name: header;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes header {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.KochutYura {
+  color: #9cbc68;
+  text-transform: uppercase;
+  font-size: 67px;
+}
+
+.no-select-user {
+  -moz-user-select: none;
+  /* Mozilla Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer (не поддерживается) */
+  -o-user-select: none;
+  /* Opera Presto (не поддерживается) */
+  -webkit-user-select: none;
+  /* Google Chrome, Opera Next, Safari */
+}

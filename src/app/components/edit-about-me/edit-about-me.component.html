@@ -1,0 +1,54 @@
+<div class="app_slider_and_post_photo mb_add_work_modal">
+  <div class="app_slider">
+    <app-slider class="ngb_carusel_style"></app-slider>
+  </div>
+  <div class="post_photo ml_add_work_modal">
+    <div class="input-group mb-3 mb_add_work_modal">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" accept="image/*"
+          aria-describedby="inputGroupFileAddon01" #fileWork>
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </div>
+
+
+    <button type="submit" [ngClass]="{
+      'btn-por': true,
+      'upload': true,
+      'btnUpload': true
+    }" (click)="addImg()">Add photo</button>
+
+    <!-- progress -->
+    <div class="form-group row upload formUpload">
+      <div class="card-body upload-card">
+        <div [ngClass]="{
+          'progress': true, 
+          'progressUpload': true,
+          'opacity1': AdminService.upload,
+          'opacity0': !AdminService.upload
+        }">
+          <div [ngClass]="{
+            'progress-bar': true,
+            'progress-bar-striped': true,
+            'bg-success': true,
+            'class': true
+          }" role="progressbar"
+            [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <div *ngIf="AboutService.checkFirstElement">
+          <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+            File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="edit_about_me">
+    <textarea name="" id="" class="form-control" placeholder="header..." [(ngModel)]="AboutService.header"></textarea>
+    <textarea name="" id="" class="form-control ml_add_work_modal" placeholder="text..." [(ngModel)]="AboutService.text"></textarea>
+</div>

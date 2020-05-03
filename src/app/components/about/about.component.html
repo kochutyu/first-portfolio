@@ -1,0 +1,80 @@
+<!-- START ----------------------------------------------
+  
+  ==> TITLE_ABOUT_ME
+        ABOUT_ME
+          TEXT_ABOUT_ME
+            TITLE_FOR_ABOUT_ME
+            DESCRIBE_ME
+          SLIDER
+
+  ==> MARGIN
+
+  ==> TITLE_SERVICES
+        MY_SERVICES
+          GENERATE_SERVICES
+            ICON_FOR_SERVICE
+            INFO_ABOUT_SERVICE
+              TITLE_FOR_SERVICE
+              DESCRIBE_SERVICE
+
+---- END ------------------------------------------------>
+
+
+<div class="my_container">
+
+  <div class="display_between mb-10">
+    <!-- TITLE_ABOUT_ME -->
+    <h3>About</h3>
+    <button (click)="OnEditAbout()" class="btn-por" *ngIf="AdminService.signIn">Edit</button>
+  </div>
+  <!-- SLIDER -->
+  <div class="about-me-slider">
+    <app-slider></app-slider>
+  </div>
+  <!-- ABOUT_ME -->
+  <div class="about-me mb-10 mt-20">
+    <!-- TEXT_ABOUT_ME -->
+    <div class="about-me-text">
+      <!-- TITLE_FOR_ABOUT_ME -->
+      <p class="lead">
+        {{AboutService.header}}
+      </p>
+      <!-- DESCRIBE_ME -->
+      <p>
+        {{AboutService.text}}
+      </p>
+    </div>
+  </div>
+
+  <!-- MARGIN -->
+  <!-- <div class="devide50"></div> -->
+
+  <!-- TITLE_SERVICES -->
+  <div class="display_between">
+    <h3>My Services</h3>
+    <button class="btn-por" *ngIf="AdminService.signIn" (click)="onAddSkill()">Add slill</button>
+  </div>
+  <!-- MY_SERVICES -->
+  <div class="about-me-services mb-10 mt-20">
+    <!-- GENERATE_SERVICES -->
+    <div class="about-me-services-slill" *ngFor="let item of AboutService.aboutSkillsArr">
+      <!-- ICON_FOR_SERVICE -->
+      <div class="hover-active" *ngIf="AdminService.signIn"></div>
+      <button class="edit_post_portfolio btn-por" *ngIf="AdminService.signIn" (click)="editSkill(item)">Edit</button>
+      <button class="delete_post_portfolio btn-por" *ngIf="AdminService.signIn"
+        (click)="deleteSkill(item)">Delete</button>
+
+      <div class="about-me-services-icon">
+        <fa name="check"></fa>
+      </div>
+      <!-- INFO_ABOUT_SERVICE -->
+      <div class="about-me-services-info">
+        <!-- TITLE_FOR_SERVICE -->
+        <h5>{{item.header}}</h5>
+        <!-- DESCRIBE_SERVICE -->
+        <p>{{item.text}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

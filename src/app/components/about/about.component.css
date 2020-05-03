@@ -1,0 +1,148 @@
+
+/*--- START ------------------
+
+  ==> ABOUT_ME
+  ==> MY_SERVICES
+
+------ END --------------------*/
+
+/* ABOUT_ME */
+.about-me {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .about-me-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+}
+
+.about-me-text {
+  min-height: 400px;
+}
+
+.about-me-text p{
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+
+.about-me-slider {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/* MY_SERVICES */
+.about-me-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+@media screen and (max-width: 1080px) {
+  .about-me-services {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-me{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about-me-slider{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about-me-services {
+    grid-template-columns: 1fr;
+  }
+  /* .about-me{
+    display: flex;
+    flex-direction: column-reverse;
+  } */
+}
+
+.about-me-services-slill {
+  display: flex;
+  min-height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about-me-services-icon {
+  position: relative;
+  left: 1px;
+  margin-top: -18px;
+  margin-right: 10px;
+}
+
+.about-me-services-icon fa {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  color: #9cbc68;
+}
+
+/* .about-me-services-info {
+  text-align: start;
+} */
+
+.about-me-services-info {
+  text-align: start;
+  position: relative;
+}
+
+.about-me-services-info p {
+  line-height: 1.2;
+  word-spacing: 0px;
+}
+
+.about-me-services-info h5 {
+  margin-bottom: 5px;
+}
+
+.hover-active {
+  z-index: 100;
+  position: absolute;
+  background-color: rgba(42, 42, 40, 0.95);
+  width: 100%;
+  height: 100%;
+  animation: hover_efect 0.3s linear;
+}
+
+.delete_post_portfolio{
+  position: absolute;
+    z-index: 1000;
+    right: 8px;
+    top: 3px;
+}
+
+.delete_post_portfolio:hover{
+  border: 2px solid rgb(214, 115, 115);
+  color: rgb(214, 115, 115);
+}
+
+.edit_post_portfolio{
+  position: absolute;
+  z-index: 1000;
+  right: 92px;
+  top: 3px;
+}
+
+.display_between{
+  display: flex;
+  justify-content: space-between;
+}

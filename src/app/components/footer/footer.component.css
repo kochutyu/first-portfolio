@@ -1,0 +1,20 @@
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.elemis {
+  color: #9cbc68;
+}
+
+@media screen and (max-width: 800px) {
+  .footer-content {
+      flex-direction: column;
+      justify-content: center;
+  }
+  .footer-license{
+      margin-bottom: 10px;
+  }
+}
