@@ -110,6 +110,10 @@ textarea{
   user-select: none;
 }
 
+.btn-por:disabled{
+  cursor: no-drop;
+}
+
 .btn-por:hover{
   cursor: pointer;
   color: #9cbc68;

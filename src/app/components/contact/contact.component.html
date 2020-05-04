@@ -61,31 +61,61 @@
   <div class="devide50"></div>
 
   <!-- CONTACT_FORM -->
-  <form class="contact-form" [formGroup]="form" (ngSubmit)="sendMessage()" *ngIf="windowS.width>800">
-    <!-- GENERAL_INFORMATION -->
-    <div class="contact-form-input left">
-      <!-- NAME -->
-      <div class="contact-form-input-name mb-20">
-        <h6>Name</h6>
-        <input type="text" class="form-control" formControlName="name">
-      </div>
-      <!-- EMAIL -->
-      <div class="contact-form-input-name mb-20">
-        <h6>Email</h6>
-        <input type="text" class="form-control email-form" formControlName="email">
-      </div>
-      <!-- BTN_SEND_MESSAGE -->
-      <!-- <div class="btn-por contact-btn">Send message</div> -->
-      <!-- <input type="submit" value="Send message" class="btn-por contact-btn"> -->
-      <button class="btn-por contact-btn" type="submit">Send message</button>
-    </div>
-    <!-- TEXTAREA_MESSAGE -->
-    <div class="contact-form-input">
-      <h6>Message</h6>
-      <textarea cols="30" rows="8" class="form-control mb-20" [(ngModel)]="contact_textarea" name="textarea" formControlName="text"></textarea>
-      <!-- <input type="text" class="form-control " [(ngModel)]="contact_textarea"> -->
+  <form [formGroup]="form" (ngSubmit)="sendMessage()" *ngIf="windowS.width>800">
+    <div class="contact-form">
+      <!-- GENERAL_INFORMATION -->
+      <div class="contact-form-input left">
+        <!-- NAME -->
+        <div class="contact-form-input-name mb-20">
+          <h6>Name</h6>
+          <input type="text"
+            [ngClass]="{'form-control': true, 'error-border': form.get('name').touched && form.get('name').invalid}"
+            formControlName="name" #nameL>
+          <div class="errors" *ngIf="form.get('name').touched && form.get('name').invalid">
+            <span class="error" *ngIf="form.get('name').errors.required">
+              This field is requared.
+            </span>
+          </div>
+        </div>
+        <!-- EMAIL -->
+        <div class="contact-form-input-name mb-20">
+          <h6>Email</h6>
+          <input type="text" [ngClass]="{'form-control': true, 'email-form': true,'error-border': form.get('email').touched &&
+          form.get('email').invalid}" formControlName="email" [ngStyle]="{'margin-bottom': '0'}" #emailL>
+          <div class="errors" *ngIf="form.get('email').touched && form.get('email').invalid">
+            <span class="error" *ngIf="form.get('email').errors.required">
+              This field is requared.
+            </span>
+            <span class="error" *ngIf="form.get('email').errors.email">
+              Please enter email in format test@gmail.com.
+            </span>
+          </div>
+        </div>
+        <!-- BTN_SEND_MESSAGE -->
+        <!-- <div class="btn-por contact-btn">Send message</div> -->
+        <!-- <input type="submit" value="Send message" class="btn-por contact-btn"> -->
 
-      <!-- BTN_CLEAR_MESSAGE -->
+
+      </div>
+      <!-- TEXTAREA_MESSAGE -->
+      <div class="contact-form-input">
+        <h6>Message</h6>
+        <textarea cols="30" rows="8"
+          [ngClass]="{'form-control': true, 'mb-20': true,'error-border': form.get('text').touched && form.get('text').invalid}"
+          [(ngModel)]="contact_textarea" name="textarea" formControlName="text" [ngStyle]="{'margin-bottom': '0'}"
+          #textL></textarea>
+        <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
+          <span class="error" *ngIf="form.get('text').errors.required">
+            This field is requared.
+          </span>
+        </div>
+        <!-- <input type="text" class="form-control " [(ngModel)]="contact_textarea"> -->
+
+        <!-- BTN_CLEAR_MESSAGE -->
+      </div>
+    </div>
+    <div class="btn-form-validate">
+      <button class="btn-por contact-btn" type="submit" [ngStyle]="{'margint-top': '85px'}">Send message</button>
       <button type="button" class="btn-por contact-btn" (click)="clearForm()">Clear message</button>
     </div>
   </form>
@@ -94,30 +124,53 @@
     <!-- GENERAL_INFORMATION -->
     <div class="contact-form-input left">
       <!-- NAME -->
-      <div class="contact-form-input-name mb-20">
+      <div class="contact-form-input-name">
         <h6>Name</h6>
-        <input type="text" class="form-control" formControlName="name">
+        <input type="text" formControlName="name" [ngClass]="{'form-control': true,'error-border': form.get('name').touched &&
+          form.get('name').invalid}" #nameS>
+      </div>
+      <div class="errors" *ngIf="form.get('name').touched && form.get('name').invalid" [ngStyle]="{'width': '100%'}">
+        <span class="error" *ngIf="form.get('name').errors.required">
+          This field is requared.
+        </span>
       </div>
       <!-- EMAIL -->
-      <div class="contact-form-input-name mb-20">
+      <div class="contact-form-input-name" [ngStyle]="{'margin-top': '20px'}">
         <h6>Email</h6>
-        <input type="text" class="form-control" formControlName="email">
+         <input type="text" [ngClass]="{'form-control': true,'error-border': form.get('email').touched &&
+          form.get('email').invalid}" formControlName="email" #emailS>
+      </div>
+      <div class="errors" *ngIf="form.get('email').touched && form.get('email').invalid" [ngStyle]="{'width': '100%'}">
+        <span class="error" *ngIf="form.get('email').errors.required">
+          This field is requared.
+        </span>
+        <span class="error" *ngIf="form.get('email').errors.email">
+          Please enter email in format test@gmail.com.
+        </span>
       </div>
     </div>
     <!-- TEXTAREA_MESSAGE -->
-    <div class="contact-form-input">
+    <div class="contact-form-input" [ngStyle]="{'margin-top': '20px'}">
       <h6>Message</h6>
-      <textarea cols="30" rows="8" class="form-control mb-20" [(ngModel)]="contact_textarea" name="textarea"
-      formControlName="text"></textarea>
+      <textarea cols="30" rows="8"
+      [ngClass]="{'form-control': true, 'error-border': form.get('text').touched &&
+      form.get('text').invalid}"
+      [(ngModel)]="contact_textarea" name="textarea"
+        formControlName="text" #textS></textarea>
+      <div class="errors" *ngIf="form.get('text').touched && form.get('text').invalid">
+        <span class="error" *ngIf="form.get('text').errors.required">
+          This field is requared.
+        </span>
+      </div>
       <!-- <input type="text" class="form-control " [(ngModel)]="contact_textarea"> -->
-      
+
       <!-- BTN_CLEAR_MESSAGE -->
-      <div class="btn-form">
+      <div class="btn-form" [ngStyle]="{'margin-top': '20px'}">
         <button class="btn-por contact-btn" type="submit">Send message</button>
         <button type="button" class="btn-por contact-btn" (click)="clearForm()">Clear message</button>
       </div>
     </div>
   </form>
 
-  
+
 </div>

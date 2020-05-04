@@ -44,11 +44,11 @@
   margin-bottom: 5px;
 }
 
-.email-form{
+.email-form {
   margin-bottom: 85px;
 }
 
-.btn-form{
+.btn-form {
   display: flex;
   justify-content: space-between;
 }
@@ -69,4 +69,51 @@
     grid-template-columns: 1fr;
   }
 
+}
+
+.errors {}
+
+.error {
+  color: rgb(199, 96, 96);
+  animation: error-color .5s linear;
+}
+
+.error-border {
+  border: 2px solid rgb(199, 96, 96);
+  animation: error-color .5s linear;
+}
+
+@keyframes error-border {
+  0% {
+   border: 2px solid #e0e0e0;
+  }
+
+  100% {
+    border: 2px solid rgb(199, 96, 96);
+  }
+}
+
+@keyframes error-color {
+  0% {
+    color: #e0e0e0;
+  }
+
+  100% {
+    color: rgb(199, 96, 96);
+  }
+}
+
+.mbottom-85 {
+  margin-bottom: 85px
+}
+
+.btn-form-validate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.btn-form-validate button:first-child {
+  margin-right: 30px;
 }
